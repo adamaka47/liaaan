@@ -1,0 +1,232 @@
+.header
+	&-burger
+		display: none
+	&-close
+		display: none
+		color: #fff
+		font-size: 48px
+		line-height: 0.5
+		cursor: pointer
+		border: none
+		background-color: transparent
+		outline: none
+	&-main
+		position: relative
+		width: 100%
+		height: 100%
+		border-top: 1px solid #a1a1a1
+	&-top
+		padding: 27px 0
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+	&-buttons
+		display: flex
+		position: absolute
+		width: 100%
+		top: 50%
+		transform: translateY(-50%)
+		.arrow
+			&__prev
+				left: 110px
+			&__next
+				right: 110px
+
+		button
+			position: absolute
+			border: none
+			background-color: transparent
+			cursor: pointer
+			border: 2px solid #fff
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			&:hover
+				background-color: #000
+			&:focus
+				outline: none
+			img
+				margin: auto
+				width: 15px
+				height: 25px
+	&-logo
+		display: inline-block
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-wrap: wrap
+		&__item
+			margin-right: 45px
+			&:last-child
+				margin-right: 0
+				.header-list__link
+					&::before
+						display: none
+
+		&__link
+			+latoss
+			font-weight: 700
+			font-size: 15px
+			text-decoration: none
+			color: $text-color
+			position: relative
+			transition: color 0.2s
+			&:hover
+				color: #000
+			&-active
+				color: #000
+				&::before
+					content: ''
+					position: absolute
+					height: 1px
+					width: 20px
+					background-color: #000
+					top: 54%
+					left: -30px
+					opacity: 1
+					transition: 0.2s
+
+		img
+			width: 20px
+			height: 20px
+
+	&-slider
+		&__item
+			min-height: 640px
+			text-align: center
+			display: flex !important
+			align-items: center
+			flex-wrap: wrap
+			background: url('../img/main_slider1.jpg') center/cover no-repeat
+		&__title
+			margin: 0
+			font-size: 48px
+			text-transform: uppercase
+			font-weight: 300
+			color: #fff
+			background-color: #000
+			padding: 12px 50px
+			letter-spacing: 4.8px
+			margin-bottom: 35px
+		&__subtitle
+			margin: 0
+			text-transform: uppercase
+			font-size: 18px
+			color: #000
+			font-weight: 300
+			letter-spacing: 0.72px
+	.slick-slide
+		outline: none
+	.slick-dots
+		position: absolute
+		display: flex
+		left: 50%
+		transform: translateX(-50%)
+		bottom: 50px
+		padding: 0
+		margin: 0
+		list-style-type: none
+		li.slick-active
+			button
+				&::before
+						content: ''
+						position: absolute
+						width: 100%
+						height: 100%
+						border: 4px solid #000
+						top: 0
+						left: 0
+						border-radius: 50%
+		li
+			margin-right: 15px
+			width: 15px
+			&:last-child
+				margin-right: 0
+			button
+				border: none
+				background-color: transparent
+				width: 15px
+				height: 15px
+				border-radius: 50%
+				background-color: #fff
+				cursor: pointer
+				outline: none
+				position: relative
+
+@media (max-width: 1200px)
+	.header
+		&-buttons
+			.arrow
+				&__prev
+					left: 20px
+				&__next
+					right: 20px
+		&-slider
+			&__item
+				min-height: 460px
+			&__title
+				font-size: 35px
+
+@media (max-width: 740px)
+	.header
+		&-slider
+			&__item
+				min-height: 420px
+			&__title
+				padding: 10px 25px
+				font-size: 24px
+		&-buttons
+			top: 45px
+		&-close
+			display: block
+			position: absolute
+			z-index: 4
+			top: 30px
+			right: 19px
+		&-nav
+			position: fixed
+			left: 0
+			top: 0
+			z-index: 2
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0,0.8)
+			top: 250%
+			transform: translateY(-50%)
+			transition: all 0.4s
+			&-active
+				top: 50%
+		&-list
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			height: 100%
+			&__item
+				margin-right: 0
+				margin-bottom: 25px
+				&:last-child
+					margin-bottom: 0 
+					.header-list__link
+						display: none
+			&__link
+				color: #fff
+				font-size: 24px
+				text-transform: uppercase
+				&:hover
+					color: #fff
+				&-active
+					color: #fff
+				&::before
+					display: none
+		&-burger
+			cursor: pointer
+			display: block
+			border: none
+			background-color: transparent
+			width: 45px
+			outline: none

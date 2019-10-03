@@ -1,0 +1,47 @@
+.footer
+	padding-top: 65px
+	padding-bottom: 45px
+	&__link
+		display: flex
+		justify-content: center
+	&-socials
+		border-top: 1px solid $border
+		border-bottom: 1px solid $border
+		margin: 0
+		padding: 0
+		padding: 22px 0
+		list-style-type: none
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+		margin-top: 40px
+		&__item
+			margin-right: 40px
+			&:last-child
+				margin-right: 0
+		&__link
+			img
+				height: 20px
+	&-copy
+		margin: 0
+		text-align: center
+		text-transform: uppercase
+		font-size: 13px
+		letter-spacing: 0.3px
+		font-weight: 700
+		+latoss
+		margin-top: 32px
+		a
+			color: #000
+			display: inline-block
+			margin: 0 2px
+
+@media (max-width: 480px)
+	.footer
+		padding-right: 15px
+		padding-left: 15px
+		&-copy
+			line-height: 1.5
+
+
